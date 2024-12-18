@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class Client {
+public class PaymentProcessor {
 
   public static void main(String[] args) {
     PaymentContext paymentContext = new PaymentContext(new CreditCardPayment());
@@ -9,7 +9,7 @@ public class Client {
     paymentContext = new PaymentContext(new PayPalPayment());
     paymentContext.performPay();
 
-    paymentContext = new PaymentContext(new Crypto());
+    paymentContext = new PaymentContext(new CryptoPayment());
     paymentContext.performPay();
   }
 }
