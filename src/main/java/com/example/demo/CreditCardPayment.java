@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class CreditCardPaymentStrategy implements PaymentStrategy {
+public class CreditCardPayment implements PaymentStrategy {
 
   @Override
   public void pay() {
