@@ -1,15 +1,18 @@
 package com.example.demo;
 
-public class PaymentProcessor {
+public class PaymentContext {
 
-  public static void main(String[] args) {
-    PaymentContext paymentContext = new PaymentContext(new CreditCardPayment());
-    paymentContext.performPay();
+  private PaymentStrategy paymentStrategy;
 
-    paymentContext = new PaymentContext(new PayPalPayment());
-    paymentContext.performPay();
+  public PaymentContext(PaymentStrategy paymentStrategy) {
+    this.paymentStrategy = paymentStrategy;
+  }
 
-    paymentContext = new PaymentContext(new CryptoPayment());
-    paymentContext.performPay();
+  public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
+    this.paymentStrategy = paymentStrategy;
+  }
+
+  public void performPay(double amount) {
+    paymentStrategy.pay(amount);
   }
 }
