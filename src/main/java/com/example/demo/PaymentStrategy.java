@@ -2,5 +2,5 @@ package com.example.demo;
 
 public interface PaymentStrategy {
 
-  void pay();
+  void processPayment(double amount);
 }
