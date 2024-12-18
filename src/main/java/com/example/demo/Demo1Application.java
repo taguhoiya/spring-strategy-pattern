@@ -9,7 +9,8 @@ public class Demo1Application {
   public static void main(String[] args) {
     SpringApplication.run(Demo1Application.class, args);
 
-    PaymentContext paymentContext = new PaymentContext(new CreditCardPayment());
-    paymentContext.performPay();
+    PaymentProcessor paymentProcessor = new PaymentProcessor();
+    paymentProcessor.setPaymentStrategy(new CreditCardPayment());
+    paymentProcessor.processPayment(100.0);
   }
 }
